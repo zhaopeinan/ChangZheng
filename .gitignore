@@ -1,0 +1,36 @@
+# Secrets & local credentials — never commit
+.env
+.env.*
+*.env
+aliyun.env
+**/aliyun.env
+*.pem
+*.key
+credentials.json
+secrets/
+
+# Project datasets & geographic source materials (kept local only)
+assets/data/**
+!assets/data/README.md
+assets/img/map-base-*.jpg
+assets/img/map-base-*.png
+assets/img/jiajinshan-height.png
+assets/img/jiajinshan-height.jpg
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Local scratch / generation prompts (banner asset itself is kept under docs/assets)
+generated/
+*.log
+tmp/
+.cache/
+
+# Optional local overrides
+DEPLOY.local.md
+.rsync-exclude

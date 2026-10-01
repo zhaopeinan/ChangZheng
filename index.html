@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>重走险关 · 长征险阻解码</title>
+<meta name="description" content="以长征时空地图为基础，用真实地理数据解码五大自然险阻：雪山、草地、大河、激流、隘口。">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<!-- ═══════════ 序章 ═══════════ -->
+<header class="hero" id="hero">
+  <div class="hero-inner">
+    <p class="hero-kicker">1934.10 — 1936.10 · 长征胜利 90 周年</p>
+    <h1 class="hero-title">重走险关</h1>
+    <p class="hero-sub">长征险阻解码 · 一次用地理数据重读历史的交互之旅</p>
+    <div class="hero-stats" id="hero-stats"><!-- JS 注入综述数据 --></div>
+    <a class="hero-cta" href="#map-main">开始解码 ↓</a>
+  </div>
+</header>
+
+<!-- ═══════════ 背景 · 为什么出发 ═══════════ -->
+<section class="chapter background" id="background">
+  <div class="chapter-inner gs-scale">
+    <p class="kicker reveal">背景 · 为什么出发</p>
+    <p class="bg-line reveal">1934年10月，第五次反「围剿」失利，中央红军8.6万余人从江西瑞金、于都出发，踏上战略转移之路。</p>
+    <p class="bg-line reveal">湘江一战，红军由8.6万锐减至3万余。1935年1月，遵义会议在最危急的关头实现伟大转折。</p>
+    <p class="bg-line reveal">此后，横在红军面前的除了围追堵截，还有一道道自然天险——金沙江、大渡河、大雪山、水草地、腊子口。</p>
+    <p class="bg-line bg-line-gold reveal">本作品以时空地图与真实地理数据，解码这五道险关。</p>
+    <p class="bg-src reveal">背景史料：中央党史和文献研究院、共产党员网（详见结语）</p>
+  </div>
+</section>
+
+<!-- ═══════════ 时空地图主线（滚动叙事） ═══════════ -->
+<section class="map-main" id="map-main">
+  <div class="map-stage" id="map-stage">
+    <!-- 标准地图底图（原幅引用，审图号 GS(2023)2767号）+ 独立暗化层 + SVG 路线叠加层 -->
+    <div class="map-camera" id="map-camera">
+      <div class="map-baselayer" id="map-baselayer"></div>
+      <div class="map-dim" aria-hidden="true"></div>
+      <svg class="map-overlay" id="map-overlay" viewBox="0 0 3200 2271" preserveAspectRatio="xMidYMid meet"></svg>
+    </div>
+    <p class="map-credit">标准地图 审图号：GS(2023)2767号 自然资源部监制</p>
+  </div>
+  <div class="map-narrative" id="map-narrative">
+    <!-- 滚动叙事卡片由 JS 依数据生成 -->
+  </div>
+</section>
+
+<!-- ═══════════ 险关解码站 ×5 ═══════════ -->
+<main class="gates" id="gates">
+  <!-- 每个险关一节，结构由 JS 依 data/gates.json 渲染：
+       地形剖面（Canvas）/ 气候 / 水文 / 决策时刻 -->
+</main>
+
+<!-- ═══════════ 尾声 · 滚动字幕 ═══════════ -->
+<section class="chapter finale" id="finale">
+  <div class="finale-inner gs-scale">
+    <p class="kicker">尾声</p>
+    <div class="finale-mask" id="finale-mask">
+      <div class="finale-track" id="finale-track"><!-- JS 生成字幕 --></div>
+    </div>
+    <div class="finale-actions" id="finale-actions"><!-- JS 生成按钮 --></div>
+  </div>
+</section>
+
+<!-- ═══════════ 结语 ═══════════ -->
+<footer class="colophon" id="colophon">
+  <div class="colophon-inner">
+    <h2>数据来源与说明</h2>
+    <div id="colophon-sources"></div>
+    <p class="colophon-note">本作品为中国大陆标准地图原幅引用，审图号详见 README。交互图层为独立叠加，未改动底图内容。</p>
+  </div>
+</footer>
+
+<script src="assets/data/data.js"></script>
+<script defer src="assets/js/main.js"></script>
+<script defer src="assets/js/audio.js"></script>
+</body>
+</html>
